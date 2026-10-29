@@ -14,6 +14,10 @@
 
 import express from 'express';
 import cors from 'cors';
+import authRoutes from './routes/authRoutes';
+import taskRoutes from './routes/taskRoutes';
+
+import errorMiddleware from './middlewares/errorMiddleware';
 
 const app = express();
 
@@ -25,6 +29,11 @@ app.get("/", (req, res) => {
     message: "Welcome to TaskFlow API",
   });
 });
+
+app.use("/api/auth", authRoutes);
+app.use("/api/tasks", taskRoutes);
+
+app.use(errorMiddleware);
 
 export default app;
 
