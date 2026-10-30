@@ -1,8 +1,8 @@
-import User from '../models/user';
+import User from '../models/user.js';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';               //creates authentication tokens
 
-exports.register = async(req, res, next)=>{
+export const register = async(req, res, next)=>{
     try{
         const{name, email, password} = req.body;
 
@@ -57,7 +57,7 @@ exports.register = async(req, res, next)=>{
     }
 }
 
-exports.login = async(req, res, next)=>{
+export const login = async(req, res, next)=>{
     try{
         const {email, password} = req.body;
 
