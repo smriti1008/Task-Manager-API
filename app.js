@@ -14,10 +14,10 @@
 
 import express from 'express';
 import cors from 'cors';
-import authRoutes from './routes/authRoutes';
-import taskRoutes from './routes/taskRoutes';
+import authRoutes from './routes/authRoutes.js';
+import taskRoutes from './routes/taskRoutes.js';
 
-import errorMiddleware from './middlewares/errorMiddleware';
+import errorMiddleware from './middlewares/errorMiddleware.js';
 
 const app = express();
 
